@@ -1,0 +1,31 @@
+{
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+        "virtualMachines_adminPassword": {
+            "value": "TestPasswordNOTSecure1234"
+        },
+         "virtualMachines_adminAccount": {
+            "value": "Alex"
+        },
+        "webServerName": {
+            "value": "ADB-WFE-01"
+        },
+        "nicName": {
+            "value": "ADB-WFE-01"
+        },
+        "networkSecurityGroups_name": {
+            "value": "ADB-WFE-01"
+        },
+        "publicIPAddresses_name": {
+            "value": "ADB-WFE-01"
+        },
+        "virtualNetworks_name": {
+            "value": "ARMPlay"
+        },
+        "storageAccounts_name": {
+            "value": "armplay1936"
+        }
+    		
+  }
+}

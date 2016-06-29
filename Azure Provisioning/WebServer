@@ -1,0 +1,10 @@
+azure login
+azure config mode arm
+
+Provision resource group and template for server(s):
+azure group create -n ARMPlayGroup -l "North Europe"
+
+azure group deployment create -f "Azure Provisioning\WebServer.json" -e "Azure Provisioning\WebServer.Parameters.json" -g ARMPlayGroup -n ARMPlayGroupDeployment
+
+Deploy Chef:
+azure vm extension set-chef -m "ADB-WFE-01" -g ARMPlayGroup1 --client-config "C:\ADB\ChefPlay\ChefPlay\Azure Provisioning\chefclient\client.rb" --validation-pem "C:\adb\ChefPlay\ChefPlay\Azure Provisioning\chefclient\validator2.pem" -R 'recipe[learn_chef_iis]'
